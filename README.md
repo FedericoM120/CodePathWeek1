@@ -10,8 +10,6 @@ FlashCard app that displays question. Listener makes question disappear and answ
 ### App Walk-though
 <img src="https://user-images.githubusercontent.com/69607469/190865168-224d385f-62c8-4e6d-8e98-233b03e48639.gif" width=200><br>
 
-`TODO://` In the User stories section below, add an `x` between the `-[ ]` like this `- [x]` for any user story you complete. (☝️ Remove this paragraph after after checking off user stories)
-
 ## Required
 - [x] Create New Project in Android Studio
 - [x] Add a view for the front side of the flashcard to display the question
