@@ -14,15 +14,72 @@
         android:gravity="center"
         android:text="When was the French Revolution?"
         android:textAlignment="center"
-        android:textSize="40sp" />
+        android:textSize="38sp"
+        android:textColor="@color/white"
+        android:background="@drawable/card_background"
+        android:elevation="5dp" />
 
     <TextView
         android:id="@+id/flashcard_answer"
-        android:layout_below="@id/flashcard_question"
         android:layout_width="match_parent"
         android:layout_height="200dp"
+        android:background="@drawable/answer_card_background"
+        android:text="May 5, 1789"
         android:textAlignment="center"
-        android:text="1791?"
+        android:textColor="@color/white"
         android:textSize="40sp"
         android:visibility="invisible" />
+
+    <TextView
+        android:id="@+id/choiceOne"
+        android:layout_width="361dp"
+        android:layout_height="83dp"
+        android:layout_below="@+id/flashcard_question"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="120dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="328dp"
+        android:background="#002654"
+        android:text="August 20, 1791"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="23sp" />
+
+    <TextView
+        android:id="@+id/choiceTwo"
+        android:layout_width="wrap_content"
+        android:layout_height="63dp"
+        android:layout_below="@+id/flashcard_question"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="187dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginBottom="281dp"
+        android:text="September 4, 1796"
+        android:textAlignment="center"
+        android:textSize="23sp" />
+
+    <TextView
+        android:id="@+id/choiceThree"
+        android:layout_width="wrap_content"
+        android:layout_height="78dp"
+        android:layout_below="@+id/flashcard_question"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="464dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginBottom="189dp"
+        android:background="#ED2939"
+        android:text="May 5, 1789"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="23sp" />
 </RelativeLayout>
