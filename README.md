@@ -9,7 +9,8 @@ FlashCard app that displays question. Listener makes question disappear and answ
 
 ### App Walk-though
 `TODO://` Add the URL to your animated app walk-though `gif` in the image tag below. Make sure the gif actually renders and animates when viewing this README. (☝️ Remove this paragraph after after adding gif)
-![requiredStoriesWeek1](https://user-images.githubusercontent.com/69607469/190864792-0b0f39b3-0aa4-4916-ae92-5fd5e9af6e13.gif)
+
+![v3 requiredStoriesWeek1](https://user-images.githubusercontent.com/69607469/190865057-0dbe41a4-5e6d-4167-a892-24ee0852d009.gif)
 
 <img src="YOUR_GIF_URL_HERE" width=200><br>
 
