@@ -24,6 +24,7 @@
         android:layout_width="match_parent"
         android:layout_height="200dp"
         android:background="@drawable/answer_card_background"
+        android:gravity="center"
         android:text="May 5, 1789"
         android:textAlignment="center"
         android:textColor="@color/white"
@@ -32,7 +33,8 @@
 
     <TextView
         android:id="@+id/choiceOne"
-        android:layout_width="361dp"
+        android:gravity="center"
+        android:layout_width="390dp"
         android:layout_height="83dp"
         android:layout_below="@+id/flashcard_question"
         android:layout_alignParentStart="true"
@@ -40,7 +42,7 @@
         android:layout_alignParentBottom="true"
         android:layout_marginStart="30dp"
         android:layout_marginTop="120dp"
-        android:layout_marginEnd="20dp"
+        android:layout_marginEnd="30dp"
         android:layout_marginBottom="328dp"
         android:background="#002654"
         android:text="August 20, 1791"
@@ -50,36 +52,51 @@
 
     <TextView
         android:id="@+id/choiceTwo"
-        android:layout_width="wrap_content"
+        android:gravity="center"
+        android:layout_width="390dp"
         android:layout_height="63dp"
         android:layout_below="@+id/flashcard_question"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
         android:layout_marginStart="30dp"
-        android:layout_marginTop="187dp"
+        android:layout_marginTop="219dp"
         android:layout_marginEnd="30dp"
-        android:layout_marginBottom="281dp"
+        android:layout_marginBottom="249dp"
         android:text="September 4, 1796"
         android:textAlignment="center"
         android:textSize="23sp" />
 
     <TextView
         android:id="@+id/choiceThree"
-        android:layout_width="wrap_content"
-        android:layout_height="78dp"
+        android:gravity="center"
+        android:layout_width="390dp"
+        android:layout_height="390dp"
         android:layout_below="@+id/flashcard_question"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
         android:layout_marginStart="30dp"
-        android:layout_marginTop="464dp"
+        android:layout_marginTop="504dp"
         android:layout_marginEnd="30dp"
-        android:layout_marginBottom="189dp"
+        android:layout_marginBottom="149dp"
         android:background="#ED2939"
         android:text="May 5, 1789"
         android:textAlignment="center"
         android:textColor="@color/white"
         android:textSize="23sp" />
+
+    <ImageView
+        android:id="@+id/toggle_choices_visibility"
+        android:layout_width="71dp"
+        android:layout_height="50dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="170dp"
+        android:layout_marginEnd="169dp"
+        android:layout_marginBottom="25dp"
+        android:src="@drawable/eye_open" />
+
 </RelativeLayout>
