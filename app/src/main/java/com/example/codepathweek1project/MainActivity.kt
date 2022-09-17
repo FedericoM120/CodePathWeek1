@@ -15,5 +15,7 @@ class MainActivity : AppCompatActivity() {
             findViewById<TextView>(R.id.flashcard_question).visibility = View.INVISIBLE;
             findViewById<TextView>(R.id.flashcard_answer).visibility = View.VISIBLE;
         }
+
+        //this is a test comment
     }
 }
