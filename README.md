@@ -6,7 +6,9 @@
 ## Lab 1
 
 ### App Description
-FlashCard app that displays question. Listener makes question disappear and answer appear. 
+- Flash card app. Shows question and displays answer only if user touches screen. 
+- Displays three possible answer choices which appear red if the wrong answer choice is clicked on green if the correct choice is clicked. 
+- Displays a button that toggles the answer choices visibility on and off. 
 
 ### App Walk-though
 <img src="https://user-images.githubusercontent.com/69607469/190912329-1dfa0af0-e81f-48fd-aa35-f6e9160e2696.gif" width=200><br>
