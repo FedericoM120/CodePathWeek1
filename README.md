@@ -2,13 +2,16 @@
 
 
 
+
 ## Lab 1
 
 ### App Description
-FlashCard app that displays question. Listener makes question disappear and answer appear. 
+- Flash card app. Shows question and displays answer only if user touches screen. 
+- Displays three possible answer choices which appear red when the wrong answer choice is clicked or green if the correct choice is clicked. 
+- Displays a button that toggles the answer choices visibility on and off. 
 
 ### App Walk-though
-<img src="https://user-images.githubusercontent.com/69607469/190865168-224d385f-62c8-4e6d-8e98-233b03e48639.gif" width=200><br>
+<img src="https://user-images.githubusercontent.com/69607469/190912329-1dfa0af0-e81f-48fd-aa35-f6e9160e2696.gif" width=200><br>
 
 ## Required
 - [x] Create New Project in Android Studio
@@ -17,8 +20,8 @@ FlashCard app that displays question. Listener makes question disappear and answ
 - [x] Build in logic to show the answer side when the card is tapped
 - [x] Push code to GitHu
 ## Optional
-- [ ] toggle the flashcard between the question side and the answer side
-- [ ] Style the question and answer side of the card to better distinguish between the two sides
-- [ ] Add selectable multiple choice answers beneath the card
-   - [ ] Change the background color of the multiple choice answers when clicked to indicate whether the question waanswered correctly
-- [ ] Further customize and style the card
+- [x] toggle the flashcard between the question side and the answer side
+- [x] Style the question and answer side of the card to better distinguish between the two sides
+- [x] Add selectable multiple choice answers beneath the card
+   - [x] Change the background color of the multiple choice answers when clicked to indicate whether the question waanswered correctly
+- [x] Further customize and style the card
