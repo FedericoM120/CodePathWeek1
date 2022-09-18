@@ -7,7 +7,7 @@
 
 ### App Description
 - Flash card app. Shows question and displays answer only if user touches screen. 
-- Displays three possible answer choices which appear red if the wrong answer choice is clicked on green if the correct choice is clicked. 
+- Displays three possible answer choices which appear red when the wrong answer choice is clicked or green if the correct choice is clicked. 
 - Displays a button that toggles the answer choices visibility on and off. 
 
 ### App Walk-though
