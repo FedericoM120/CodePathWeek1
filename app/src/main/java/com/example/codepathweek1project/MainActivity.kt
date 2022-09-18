@@ -37,26 +37,23 @@ class MainActivity : AppCompatActivity() {
             findViewById<TextView>(R.id.choiceThree).setBackgroundColor(Color.GREEN)
         }
 
+        val isShowingAnswer: Boolean = true;
 
-        findViewById<ImageView>(R.id.toggle_choices_visibility).setOnClickListener() {
-            findViewById<ImageView>(R.id.toggle_choices_visibility).setImageResource(R.drawable.eye_closed)
+        findViewById<ImageView>(R.id.answers_showing).setOnClickListener() {
+            findViewById<ImageView>(R.id.answers_showing).visibility = View.INVISIBLE
+            findViewById<ImageView>(R.id.answers_notShowing).visibility = View.VISIBLE
             findViewById<TextView>(R.id.choiceOne).visibility = View.INVISIBLE;
             findViewById<TextView>(R.id.choiceTwo).visibility = View.INVISIBLE;
             findViewById<TextView>(R.id.choiceThree).visibility = View.INVISIBLE;
         }
 
-        fun main() {
-            var variable : Boolean ?= null;
-            if (variable == true) {
-                findViewById<ImageView>(R.id.toggle_choices_visibility).setImageResource(R.drawable.eye_closed)
-                findViewById<TextView>(R.id.choiceOne).visibility = View.INVISIBLE;
-                findViewById<TextView>(R.id.choiceTwo).visibility = View.INVISIBLE;
-                findViewById<TextView>(R.id.choiceThree).visibility = View.INVISIBLE;
-            }
+        findViewById<ImageView>(R.id.answers_notShowing).setOnClickListener() {
+            findViewById<ImageView>(R.id.answers_notShowing).visibility = View.INVISIBLE
+            findViewById<ImageView>(R.id.answers_showing).visibility = View.VISIBLE
+            findViewById<TextView>(R.id.choiceOne).visibility = View.VISIBLE;
+            findViewById<TextView>(R.id.choiceTwo).visibility = View.VISIBLE;
+            findViewById<TextView>(R.id.choiceThree).visibility = View.VISIBLE;
         }
-
-
-
 
     }
 }
