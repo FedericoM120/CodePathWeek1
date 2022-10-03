@@ -112,4 +112,14 @@
         android:src="@drawable/eye_closed"
         android:visibility="invisible" />
 
+    <ImageView
+        android:id="@+id/add_question_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/icon_add"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"/>
+
+
+
 </RelativeLayout>
