@@ -7,7 +7,6 @@
 
 <img src="https://user-images.githubusercontent.com/69607469/193707903-87df9a19-09b2-4c53-89ea-5eaa292db82e.gif" width=200><br>
 
-`TODO://` In the User stories section below, add an `x` between the `-[ ]` like this `- [x]` for any user story you complete. (☝️ Remove this paragraph after after checking off user stories)
 
 ## Required
 - [x] User can click on a ‘+’ button that takes the user to new ‘Add Card Screen’
