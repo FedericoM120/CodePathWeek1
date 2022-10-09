@@ -15,12 +15,27 @@ import com.google.android.material.snackbar.Snackbar
 import org.w3c.dom.Text
 
 class MainActivity : AppCompatActivity() {
+    lateinit var flashcardDatabase: FlashcardDatabase
+    var allFlashcards = mutableListOf<Flashcard>()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        flashcardDatabase = FlashcardDatabase(this)
+        allFlashcards = flashcardDatabase.getAllCards().toMutableList()
+
+
+        if(allFlashcards.size > 0) {
+            findViewById<TextView>(R.id.flashcard_question).text = allFlashcards[0].question
+            findViewById<TextView>(R.id.flashcard_answer).text = allFlashcards[0].answer
+        }
         val flashcardQuestion = findViewById<TextView>(R.id.flashcard_question)
         val flashcardAnswer = findViewById<TextView>(R.id.flashcard_answer)
+        val flashcardChoiceOne = findViewById<TextView>(R.id.choiceOne)
+        val flashcardChoiceTwo = findViewById<TextView>(R.id.choiceTwo)
+
+        //flashcardQuestion.text = allFlashcards[0].question
+        //flashcardAnswer.text = allFlashcards[0].answer
 
         val resultLauncher = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
 
@@ -33,18 +48,33 @@ class MainActivity : AppCompatActivity() {
             if (data != null) {
                 val questionString = data.getStringExtra("QUESTION_KEY")
                 val answerString = data.getStringExtra("ANSWER_KEY")
+                val rightAnswerString = data.getStringExtra("rightAnswer_Key")
+                val wrongChoiceOne = data.getStringExtra("wrongChoiceOne_Key")
 
                 flashcardQuestion.text = questionString
                 flashcardAnswer.text = answerString
+                flashcardChoiceOne.text = rightAnswerString
+                flashcardChoiceTwo.text = wrongChoiceOne
 
+
+                if (!questionString.isNullOrEmpty() && !answerString.isNullOrEmpty()) {
+                    flashcardDatabase.insertCard(Flashcard(questionString, answerString))
+                    allFlashcards = flashcardDatabase.getAllCards().toMutableList()
+                }
             } else {
-                Log.i("Paulina: MainActivity", "Returned null data from AddCardActivity")
+                Log.i("Federico: MainActivity", "Returned null data from AddCardActivity")
             }
 
         }
 
         val addQuestionButton = findViewById<ImageView>(R.id.add_question_button)
         addQuestionButton.setOnClickListener {
+            val intent = Intent(this, AddCardActivity::class.java)
+            resultLauncher.launch(intent)
+        }
+
+        val editQuestionButton = findViewById<ImageView>(R.id.edit_question_button)
+        editQuestionButton.setOnClickListener {
             val intent = Intent(this, AddCardActivity::class.java)
             resultLauncher.launch(intent)
         }
@@ -74,8 +104,28 @@ class MainActivity : AppCompatActivity() {
             findViewById<TextView>(R.id.choiceThree).setBackgroundColor(Color.GREEN)
         }
 
+        var shouldShowAnswers = true
 
-        findViewById<ImageView>(R.id.answers_showing).setOnClickListener() {
+        val eyeVisible = findViewById<ImageView>(R.id.answers_showing)
+
+        eyeVisible.setOnClickListener {
+            if (shouldShowAnswers){
+                eyeVisible.setImageResource(R.drawable.eye_closed)
+                findViewById<TextView>(R.id.choiceOne).visibility = View.VISIBLE;
+                findViewById<TextView>(R.id.choiceTwo).visibility = View.VISIBLE;
+                findViewById<TextView>(R.id.choiceThree).visibility = View.VISIBLE;
+                shouldShowAnswers = false
+            } else {
+                eyeVisible.setImageResource(R.drawable.eye_open)
+                findViewById<TextView>(R.id.choiceOne).visibility = View.INVISIBLE;
+                findViewById<TextView>(R.id.choiceTwo).visibility = View.INVISIBLE;
+                findViewById<TextView>(R.id.choiceThree).visibility = View.INVISIBLE;
+                shouldShowAnswers = true
+            }
+        }
+
+
+        /*findViewById<ImageView>(R.id.answers_showing).setOnClickListener() {
             findViewById<ImageView>(R.id.answers_showing).visibility = View.INVISIBLE
             findViewById<ImageView>(R.id.answers_notShowing).visibility = View.VISIBLE
             findViewById<TextView>(R.id.choiceOne).visibility = View.INVISIBLE;
@@ -89,7 +139,7 @@ class MainActivity : AppCompatActivity() {
             findViewById<TextView>(R.id.choiceOne).visibility = View.VISIBLE;
             findViewById<TextView>(R.id.choiceTwo).visibility = View.VISIBLE;
             findViewById<TextView>(R.id.choiceThree).visibility = View.VISIBLE;
-        }
+        }*/
 
 
 

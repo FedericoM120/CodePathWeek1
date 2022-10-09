@@ -23,6 +23,48 @@
         android:hint="The Answer here"
         android:layout_below="@id/flashcard_question_edittext" />
 
+
+    <EditText
+        android:id="@+id/flashcard_right_answer"
+        android:layout_width="375dp"
+        android:layout_height="62dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginBottom="394dp"
+        android:hint="Enter the right answer option here" />
+
+
+    <EditText
+        android:id="@+id/flashcard_wrong_AnswerTwo"
+        android:layout_width="wrap_content"
+        android:layout_height="85dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="19dp"
+        android:layout_marginTop="398dp"
+        android:layout_marginEnd="21dp"
+        android:layout_marginBottom="248dp"
+        android:hint="Enter another wrong answer option here" />
+
+    <EditText
+        android:id="@+id/flashcard_wrong_AnswerThree"
+        android:layout_width="371dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="21dp"
+        android:layout_marginTop="532dp"
+        android:layout_marginEnd="19dp"
+        android:layout_marginBottom="119dp"
+        android:hint="Enter another wrong answer option here" />
+
     <ImageView
         android:id="@+id/flashcard_save_button"
         android:layout_width="wrap_content"
