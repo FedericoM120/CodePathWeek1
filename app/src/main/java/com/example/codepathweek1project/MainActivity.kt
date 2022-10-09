@@ -17,6 +17,9 @@ import org.w3c.dom.Text
 class MainActivity : AppCompatActivity() {
     lateinit var flashcardDatabase: FlashcardDatabase
     var allFlashcards = mutableListOf<Flashcard>()
+
+    var currentCardDisplayIndex = 0
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -25,18 +28,19 @@ class MainActivity : AppCompatActivity() {
         allFlashcards = flashcardDatabase.getAllCards().toMutableList()
 
 
-        if(allFlashcards.size > 0) {
+        /*if(allFlashcards.size > 0) {
             findViewById<TextView>(R.id.flashcard_question).text = allFlashcards[0].question
             findViewById<TextView>(R.id.flashcard_answer).text = allFlashcards[0].answer
-        }
+        }*/
         val flashcardQuestion = findViewById<TextView>(R.id.flashcard_question)
         val flashcardAnswer = findViewById<TextView>(R.id.flashcard_answer)
         val flashcardChoiceOne = findViewById<TextView>(R.id.choiceOne)
         val flashcardChoiceTwo = findViewById<TextView>(R.id.choiceTwo)
 
-        //flashcardQuestion.text = allFlashcards[0].question
-        //flashcardAnswer.text = allFlashcards[0].answer
-
+        if (allFlashcards.size > 0) {
+            flashcardQuestion.text = allFlashcards[0].question
+            flashcardAnswer.text = allFlashcards[0].answer
+        }
         val resultLauncher = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
 
             // This code is executed in StartingActivity after we come back from EndingActivity
@@ -57,6 +61,7 @@ class MainActivity : AppCompatActivity() {
                 flashcardChoiceTwo.text = wrongChoiceOne
 
 
+
                 if (!questionString.isNullOrEmpty() && !answerString.isNullOrEmpty()) {
                     flashcardDatabase.insertCard(Flashcard(questionString, answerString))
                     allFlashcards = flashcardDatabase.getAllCards().toMutableList()
@@ -71,6 +76,24 @@ class MainActivity : AppCompatActivity() {
         addQuestionButton.setOnClickListener {
             val intent = Intent(this, AddCardActivity::class.java)
             resultLauncher.launch(intent)
+        }
+
+        val nextButton = findViewById<ImageView>(R.id.next_button)
+        nextButton.setOnClickListener {
+            currentCardDisplayIndex++
+
+            if (currentCardDisplayIndex >= allFlashcards.size){
+                currentCardDisplayIndex = 0
+            }
+
+            allFlashcards = flashcardDatabase.getAllCards().toMutableList()
+
+           val question = allFlashcards[currentCardDisplayIndex].question
+           val answer = allFlashcards[currentCardDisplayIndex].answer
+
+            flashcardQuestion.text = question
+            flashcardAnswer.text = answer
+
         }
 
         val editQuestionButton = findViewById<ImageView>(R.id.edit_question_button)
