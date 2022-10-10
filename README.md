@@ -1,5 +1,23 @@
 ﻿# CodePathWeek1
 
+## Lab 3
+
+### App Description
+User can create multiple flashcards and scroll through them by clicking a button. 
+
+### App Walk-though
+
+<img src="https://user-images.githubusercontent.com/69607469/194966423-f1779b02-2b15-4aa5-bb22-2b3f996af63a.gif" width=200><br>
+
+## Required
+- [x] User can create a card and still see their created card when the app is relaunched.
+- [x] User can create muliple cards and browse through all created cards
+
+## Optional
+- [ ] User can delete a card and no longer see it in their deck anymore
+- [ ] Flashcards are shown in random order instead of the order they were created in
+- [ ] User can edit a card and see the edit saved when they browse through their deck of cards
+- [ ] User can create flashcards with multiple answers and be able to browse through cards with multiple choice answers shown
 ## Lab 2
 
 ### App Description
