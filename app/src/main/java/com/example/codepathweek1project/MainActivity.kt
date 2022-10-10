@@ -102,6 +102,11 @@ class MainActivity : AppCompatActivity() {
             resultLauncher.launch(intent)
         }
 
+        findViewById<ImageView>(R.id.delete_question_button).setOnClickListener {
+            val flashcardQuestionToDelete = findViewById<TextView>(R.id.flashcard_question).text.toString()
+            flashcardDatabase.deleteCard(flashcardQuestionToDelete)
+        }
+
 
 
 
@@ -146,25 +151,6 @@ class MainActivity : AppCompatActivity() {
                 shouldShowAnswers = true
             }
         }
-
-
-        /*findViewById<ImageView>(R.id.answers_showing).setOnClickListener() {
-            findViewById<ImageView>(R.id.answers_showing).visibility = View.INVISIBLE
-            findViewById<ImageView>(R.id.answers_notShowing).visibility = View.VISIBLE
-            findViewById<TextView>(R.id.choiceOne).visibility = View.INVISIBLE;
-            findViewById<TextView>(R.id.choiceTwo).visibility = View.INVISIBLE;
-            findViewById<TextView>(R.id.choiceThree).visibility = View.INVISIBLE;
-        }
-
-        findViewById<ImageView>(R.id.answers_notShowing).setOnClickListener() {
-            findViewById<ImageView>(R.id.answers_notShowing).visibility = View.INVISIBLE
-            findViewById<ImageView>(R.id.answers_showing).visibility = View.VISIBLE
-            findViewById<TextView>(R.id.choiceOne).visibility = View.VISIBLE;
-            findViewById<TextView>(R.id.choiceTwo).visibility = View.VISIBLE;
-            findViewById<TextView>(R.id.choiceThree).visibility = View.VISIBLE;
-        }*/
-
-
 
     }
 }
