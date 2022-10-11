@@ -7,7 +7,7 @@ User can create multiple flashcards and scroll through them by clicking a button
 
 ### App Walk-though
 
-<img src="https://user-images.githubusercontent.com/69607469/194966423-f1779b02-2b15-4aa5-bb22-2b3f996af63a.gif" width=200><br>
+<img src="https://user-images.githubusercontent.com/69607469/195099371-ef7ecfe9-a08c-4376-8405-70569eee40aa.gif" width=200><br>
 
 ## Required
 - [x] User can create a card and still see their created card when the app is relaunched.
