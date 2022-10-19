@@ -102,10 +102,10 @@ class MainActivity : AppCompatActivity() {
             resultLauncher.launch(intent)
         }
 
-        findViewById<ImageView>(R.id.delete_question_button).setOnClickListener {
+        /*findViewById<ImageView>(R.id.delete_question_button).setOnClickListener {
             val flashcardQuestionToDelete = findViewById<TextView>(R.id.flashcard_question).text.toString()
             flashcardDatabase.deleteCard(flashcardQuestionToDelete)
-        }
+        }*/
 
 
 
