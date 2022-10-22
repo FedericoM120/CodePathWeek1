@@ -6,7 +6,7 @@ User can create and save flashcards in app. Flashcard app utilizes animations fo
 
 ### App Walk-though
 
-<img src="https://user-images.githubusercontent.com/69607469/197362649-0334087d-4413-4dfc-8861-58f5c183dbbc.gif><br>
+<img src="https://user-images.githubusercontent.com/69607469/197362649-0334087d-4413-4dfc-8861-58f5c183dbbc.gif" width=200><br>
 
 ## Required
 - [x] User sees a transition animation when going from the main screen to the add card screen.
