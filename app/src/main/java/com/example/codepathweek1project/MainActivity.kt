@@ -1,12 +1,15 @@
 package com.example.codepathweek1project
 
 import android.content.Intent
+import android.view.animation.AnimationUtils
+import android.view.animation.Animation;
 import android.graphics.Color
 import android.media.Image
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.View
+import android.view.ViewAnimationUtils
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.activity.result.contract.ActivityResultContract
@@ -76,7 +79,28 @@ class MainActivity : AppCompatActivity() {
         addQuestionButton.setOnClickListener {
             val intent = Intent(this, AddCardActivity::class.java)
             resultLauncher.launch(intent)
+            overridePendingTransition(R.anim.right_in, R.anim.left_out)
         }
+
+        val leftOutAnim = AnimationUtils.loadAnimation(this, R.anim.left_out)
+        val rightInAnim = AnimationUtils.loadAnimation(this, R.anim.right_in)
+
+        leftOutAnim.setAnimationListener(object : Animation.AnimationListener {
+            override fun onAnimationStart(animation: Animation?) {
+                // this method is called when the animation first starts
+                findViewById<View>(R.id.flashcard_question).startAnimation(leftOutAnim)
+            }
+
+            override fun onAnimationEnd(animation: Animation?) {
+                // this method is called when the animation is finished playing
+                findViewById<View>(R.id.flashcard_question).startAnimation(rightInAnim)
+            }
+
+            override fun onAnimationRepeat(animation: Animation?) {
+                // we don't need to worry about this method
+            }
+        })
+
 
         val nextButton = findViewById<ImageView>(R.id.next_button)
         nextButton.setOnClickListener {
@@ -91,6 +115,7 @@ class MainActivity : AppCompatActivity() {
            val question = allFlashcards[currentCardDisplayIndex].question
            val answer = allFlashcards[currentCardDisplayIndex].answer
 
+            findViewById<View>(R.id.flashcard_question).startAnimation(leftOutAnim)
             flashcardQuestion.text = question
             flashcardAnswer.text = answer
 
@@ -111,8 +136,20 @@ class MainActivity : AppCompatActivity() {
 
 
         findViewById<TextView>(R.id.flashcard_question).setOnClickListener {
+            val answerSideView = findViewById<View>(R.id.flashcard_answer)
+
+            val cx = answerSideView.width / 2
+            val cy = answerSideView.height / 2
+
+            val finalRadius = Math.hypot(cx.toDouble(), cy.toDouble()).toFloat()
+
+            val anim = ViewAnimationUtils.createCircularReveal(answerSideView, cx, cy, 0f, finalRadius)
+
             findViewById<TextView>(R.id.flashcard_question).visibility = View.INVISIBLE;
             findViewById<TextView>(R.id.flashcard_answer).visibility = View.VISIBLE;
+
+            anim.duration = 3000
+            anim.start()
         }
 
         findViewById<TextView>(R.id.flashcard_answer).setOnClickListener {
