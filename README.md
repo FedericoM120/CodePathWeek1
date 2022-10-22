@@ -1,5 +1,23 @@
 ﻿# CodePathWeek1
+## Lab 4
 
+### App Description
+User can create and save flashcards in app. Flashcard app utilizes animations for revealing answer, scrolling to next question, and adding a new flashcard question. 
+
+### App Walk-though
+
+<img src="https://user-images.githubusercontent.com/69607469/197362649-0334087d-4413-4dfc-8861-58f5c183dbbc.gif><br>
+
+## Required
+- [x] User sees a transition animation when going from the main screen to the add card screen.
+- [x] User sees a reveal animation when the flashcard is tapped and the answer is shown
+- [x] User sees flashcards animating in / out when the 'next' button is tapped
+
+## Optional
+- [x] Extra styling is added!
+- [ ] User sees a countdown timer for each question
+- [ ] User sees a 'card flip' animation when the card is tapped
+- [ ] User sees a celebration animation with confetti when they answer a question correctly
 ## Lab 3
 
 ### App Description
